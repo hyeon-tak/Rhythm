@@ -44,7 +44,7 @@ public class Note : MonoBehaviour
         }
     }
 
-    private void CheckNoteInput()
+    public void CheckNoteInput()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {

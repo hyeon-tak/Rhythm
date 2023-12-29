@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private int Point;
     private int Combo;
     private int Score;
+    GameManager gameManager;
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI ComboText;
     public Note note; // Note 클래스에 대한 참조 추가
@@ -31,7 +32,6 @@ public class Player : MonoBehaviour
         ScoreCalc();
         UpdateScore();
         UpdateComboText();
-        note.RemoveNote();
     }
 
     private void HandleNoteMiss()
