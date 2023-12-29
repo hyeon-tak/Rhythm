@@ -27,19 +27,19 @@ public class NotePool : MonoBehaviour
     }
 
 
-    public void SpawnNote(Vector3 spawnPosition)
-    {
-        // 비활성화된 노트 찾기
-        GameObject note = GetInactiveNote();
+    //public void SpawnNote(Vector3 spawnPosition)
+    //{
+    //    // 비활성화된 노트 찾기
+    //    GameObject note = GetInactiveNote();
 
-        if (note != null)
-        {
-            // 노트 위치 설정
-            note.transform.position = spawnPosition;
-            // 노트 활성화
-            note.SetActive(true);
-        }
-    }
+    //    if (note != null)
+    //    {
+    //        // 노트 위치 설정
+    //        note.transform.position = spawnPosition;
+    //        // 노트 활성화
+    //        note.SetActive(true);
+    //    }
+    //}
 
 
     // 비활성화된 노트 찾기
