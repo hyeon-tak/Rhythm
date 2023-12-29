@@ -1,30 +1,45 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MusicController : MonoBehaviour
 {
-    private AudioSource audioSource;
+    public AudioSource musicSource;  // 음악 재생을 위한 AudioSource
+    public AudioClip musicClip;      // 음악 파일
+    public bool PauseState = true;
 
     void Start()
     {
-        // AudioSource 컴포넌트 가져오기
-        audioSource = GetComponent<AudioSource>();
+        // AudioSource에 음악 파일 할당
+        musicSource.clip = musicClip;
+        //볼륨
+        musicSource.volume = 0.1f;    
 
-        // 재생할 음악 로드
-        audioSource.clip = Resources.Load<AudioClip>("/06.Musics/PPAP");
+        // 음악 재생 시작
+        musicSource.Play();
     }
 
     void Update()
     {
+        // 특정 조건에 따라 음악 일시 정지
+        if (PauseState == true)
+        {
+            musicSource.Pause();
+        }
+        else
+        {
+            musicSource.UnPause();  // 조건이 해제되면 다시 재생
+        }
+    }
+
+    private void ChangePause()
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (audioSource.isPlaying)
-            {
-                audioSource.Pause();
-            }
-            else
-            {
-                audioSource.Play();
-            }
+
+                PauseState = !PauseState;
+
         }
     }
 }
