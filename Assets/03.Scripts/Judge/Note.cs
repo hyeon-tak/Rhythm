@@ -7,6 +7,7 @@ public class Note : MonoBehaviour
 {
     public UnityEvent OnNoteHit;
     public UnityEvent OnNoteMiss;
+    private Player player;
 
     public int Difficulty;
     private float noteSpeed;

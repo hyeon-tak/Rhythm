@@ -5,12 +5,12 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     private int Point;
-    private int Combo;
+    public int Combo;
     private int Score;
-    GameManager gameManager;
+    public GameObject noteOBJ;
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI ComboText;
-    public Note note; // Note 클래스에 대한 참조 추가
+    public Note note;
     bool collisionDetected = false;
 
     private void Start()
